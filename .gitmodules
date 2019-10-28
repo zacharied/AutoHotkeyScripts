@@ -1,0 +1,3 @@
+[submodule "Lib/ahkpedal"]
+	path = Lib/ahkpedal
+	url = git@github.com:zacharied/ahkpedal
