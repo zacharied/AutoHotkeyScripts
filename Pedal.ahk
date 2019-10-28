@@ -10,7 +10,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 #Include <AhkPedal/AhkPedal>
 
-Menu, Tray, Icon, Res/foot.ico
+Menu, Tray, Icon, %A_ScriptDir%/Res/foot.ico
 
 VnList := GetVns()
 
@@ -46,7 +46,7 @@ NextLine() {
         }
     }
     if (not didSend) {
-        SoundPlay, Res/sounds/click5.wav
+        SoundPlay, %A_ScriptDir%/Res/sounds/click5.wav
     }
 }
 

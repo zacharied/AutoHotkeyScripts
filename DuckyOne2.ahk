@@ -83,11 +83,11 @@ ModeRatingSet(val) {
     global ModeRatingOn
     ModeRatingOn := val
     if (ModeRatingOn) {
-        Menu, Tray, Icon, %A_ScriptDir%\res\star-full.ico,,1
-        SoundPlay, Res/Sounds/on.wav
+        Menu, Tray, Icon, %A_ScriptDir%/res/star-full.ico,,1
+        SoundPlay, %A_ScriptDir%/Res/Sounds/on.wav
     } else  {
-        Menu, Tray, Icon, %A_ScriptDir%\res\star-hollow.ico,,1
-        SoundPlay, Res/Sounds/off.wav
+        Menu, Tray, Icon, %A_ScriptDir%/res/star-hollow.ico,,1
+        SoundPlay, %A_ScriptDir%/Res/Sounds/off.wav
     }
 }
 
