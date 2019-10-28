@@ -38,9 +38,18 @@ NextLine() {
     for i in VnList {
         win := WinExist("ahk_exe" . VnList[i])
         if (win) {
+            ; Every application behaves a little bit differently when it comes
+            ; to interpreting keystrokes. ControlSend is the ideal approach
+            ; here since we wouldn't have to even focus the window, but this
+            ; is not a perfect world and many apps won't accept input from
+            ; ControlSend (hell, some won't even when they *are* focused).
+            ; So, we decided to go with the unga bunga "focus and send" direct
+            ; approach, as it seems to have the most compatibility.
             WinGetActiveTitle, currentWin
             WinActivate, ahk_id %win%
-            ControlSend, , {Enter}, ahk_id %win%
+            Send {Enter down}
+            Sleep 30
+            Send {Enter up}
             WinActivate, %currentWin%
             didSend := True
         }
