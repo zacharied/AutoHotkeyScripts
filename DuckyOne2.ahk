@@ -38,12 +38,13 @@ ModeRatingSet(ModeRatingOn)
 RatingModeRate(rating) {
     key := ZachKey_StripKeyModifiers(A_ThisHotkey)
 
+    global ModeRatingOn
+
     if (not ModeRatingOn) {
         send {%A_ThisHotkey%}
         return
     }
     
-    global ModeRatingOn
     static last_rating := -1
     static last_rating_title := ""
 
